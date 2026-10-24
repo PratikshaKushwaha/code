@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme{
+  --color-obsidian: #101820;
+  --color-shrine: #571f24;
+  --color-blood-moon: #b9474b;
+  --color-lantern: #d69a62;
+  --color-mist: #34404b;
+  --color-moonlight: #d8d0c4;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateY(0rem) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0.375rem) rotate(0.4deg);
+  }
+  100% {
+    transform: translateY(-0.25rem) rotate(-0.4deg);
+  }
+}
+
+@keyframes fairyBulbGlow {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.4rem #fbbf24) drop-shadow(0 0 0.8rem #f59e0b);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 0.65rem #fde047) drop-shadow(0 0 1.25rem #f59e0b);
+  }
+}
+
+@keyframes hangingCardSway1 {
+  0% {
+    transform: rotate(-1.5deg) translateY(0rem);
+  }
+  50% {
+    transform: rotate(1.8deg) translateY(0.35rem);
+  }
+  100% {
+    transform: rotate(-1.5deg) translateY(0rem);
+  }
+}
+
+@keyframes hangingCardSway2 {
+  0% {
+    transform: rotate(1.6deg) translateY(0.2rem);
+  }
+  50% {
+    transform: rotate(-1.4deg) translateY(0rem);
+  }
+  100% {
+    transform: rotate(1.6deg) translateY(0.2rem);
+  }
+}
+
+@keyframes wireBreeze {
+  0%, 100% {
+    transform: translateY(0rem) scaleY(1);
+  }
+  50% {
+    transform: translateY(0.5rem) scaleY(1.05);
+  }
+}
+
+@keyframes subtleLanternPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0.8rem rgba(214, 154, 98, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 1.4rem rgba(245, 158, 11, 0.7));
+  }
+}
+
+@keyframes dustFloat {
+  0% {
+    transform: translateY(0rem) translateX(0rem);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-0.75rem) translateX(0.35rem);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-1.5rem) translateX(-0.25rem);
+    opacity: 0.1;
+  }
+}
+
+@keyframes washiFlutter {
+  0%, 100% {
+    transform: rotate(var(--rot, 0deg)) translateY(0rem);
+  }
+  50% {
+    transform: rotate(calc(var(--rot, 0deg) + 0.6deg)) translateY(0.1rem);
+  }
+}
+
+@keyframes doorRayBeams {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scaleX(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sway,
+  .animate-fairy-glow,
+  .animate-card-sway,
+  .animate-lantern-pulse,
+  .animate-dust-float,
+  .animate-washi-flutter {
+    animation: none !important;
+  }
+}
